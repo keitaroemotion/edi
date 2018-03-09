@@ -2,9 +2,13 @@
 
 require './lib/util.rb'
 require './lib/terminal.rb'
+require 'colorize'
 
-Terminal.get_arrow_input do |c|
-  if c == Terminal::DOWN_ARR_KEY
-    puts "down"
-  end
-end
+files = [
+  "AAA",
+  "BBB",
+  "CCC",
+  "DDD",
+]
+
+Terminal.enlist_files(files)
