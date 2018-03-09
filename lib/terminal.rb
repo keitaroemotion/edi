@@ -1,5 +1,11 @@
 require 'io/console'
 
+#
+# Thanks for the following Snippet: https://gist.github.com/acook/4190379
+#
+# author: Kei Sugano<tobasojyo@gmail.com>
+#
+
 class Terminal
   ESCAPE_KEY     = "\e"
   UP_ARR_KEY     = "\e[A"
