@@ -1,0 +1,4 @@
+cp edi /usr/local/bin
+LIB_DIR=/usr/local/lib/edi
+mkdir -p $LIB_DIR
+cp -r lib/* $LIB_DIR
