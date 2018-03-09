@@ -18,25 +18,13 @@ class UtilTest < MiniTest::Test
   end
 
   def test_show_files
-    files = 
-      [
-        "./edi",
-        "./test/lib/util_test.rb",
-        "./test/test_helper.rb",
-        "./mock/web/app/controller/moomin_controller.rb",
-        "./execute_test",
-        "./lib/util.rb",
-      ]
-    assert_equal files, @util.show_files
+    @util.show_files.each { |file| assert File.file?(file) }
   end
 
   def test_show_git_diffs
-    exp_files = [
-                  "lib/util.rb",
-                  "mock/web/app/controller/moomin_controller.rb",
-                  "test/lib/util_test.rb",
-                ]  
-    assert_equal exp_files, @util.show_git_diffs(base_branch: "test_branch")
-    assert_equal [],        @util.show_git_diffs
+    @util.show_git_diffs(base_branch: "test_branch").each do |file|
+      assert File.file?(file)
+    end
+    assert_equal [], @util.show_git_diffs
   end
 end  
