@@ -1,5 +1,10 @@
 #!/usr/bin/env ruby
 
 require './lib/util.rb'
+require './lib/terminal.rb'
 
-puts Util.get_arrow_input
+Terminal.get_arrow_input do |c|
+  if c == Terminal::DOWN_ARR_KEY
+    puts "down"
+  end
+end
