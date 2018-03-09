@@ -7,6 +7,11 @@ class UtilTest < MiniTest::Test
     @util = Util 
   end
 
+  def test_git?
+    assert @util.git?
+    refute @util.git?(dir: "test/")
+  end
+
   def test_show_files
     files = 
       [
@@ -18,5 +23,9 @@ class UtilTest < MiniTest::Test
         "./lib/util.rb",
       ]
     assert_equal files, @util.show_files
+  end
+
+  def test_show_git_diffs
+    assert_equal "", @util.show_git_diffs
   end
 end  
